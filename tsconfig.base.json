@@ -15,9 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@banger-io/comments-summarizer": [
-        "libs/comments-summarizer/src/index.ts"
-      ]
+      "@banger-io/comments-summarizer": ["libs/comments-summarizer/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
