@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { parseVideos } from '../schemas/youtube-v3/videos.schema';
+import { parseCommentThreads } from '../schemas/youtube-v3/comment-threads.schema';
 
 export type ErrorCallback = (error: Error) => void;
 
@@ -60,7 +62,8 @@ export async function getVideoIdsForChannel(channelId: string, apiKey: string, e
 
   try {
     const response = await axios.get(url, { params });
-    const videoIds = response.data.items.map((item: any) => item.id);
+    const data = parseVideos(response.data);
+    const videoIds = data.items.map((item) => item.id);
 
     return videoIds;
   } catch (error) {
@@ -82,7 +85,8 @@ export async function getCommentsForVideo(videoId: string, apiKey: string, error
 
   try {
     const response = await axios.get(url, { params });
-    const comments = response.data.items.map((item: any) => item.snippet.topLevelComment.snippet.textDisplay);
+    const data = parseCommentThreads(response.data);
+    const comments = data.items.map((item) => item.snippet.topLevelComment.snippet.textDisplay);
 
     return comments;
   } catch (error) {
