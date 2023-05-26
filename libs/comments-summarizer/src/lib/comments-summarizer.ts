@@ -9,7 +9,7 @@ export function getCommentsSummarizer(
   errorCallback: ErrorCallback
 ): (url: string) => Promise<Map<string, string[]>> {
   return async function commentsSummarizer(url: string): Promise<Map<string, string[]>> {
-    const channelId = await getChannelId(url, apiKey, errorCallback);
+    const channelId = getChannelId(url, errorCallback);
 
     if (channelId == null) {
       return new Map<string, string[]>();
@@ -20,7 +20,7 @@ export function getCommentsSummarizer(
   };
 }
 
-export async function getChannelId(url: string, apiKey: string, errorCallback: ErrorCallback): Promise<string | null> {
+export function getChannelId(url: string, errorCallback: ErrorCallback): string | null {
   try {
     const channelUrl = new URL(url);
     const pathSegments = channelUrl.pathname.split('/').filter((segment) => segment !== '');
