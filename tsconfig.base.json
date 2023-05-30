@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@banger-io/api-fetcher": ["libs/api-fetcher/src/index.ts"]
+      "@banger-io/api-fetcher": ["libs/api-fetcher/src/index.ts"],
+      "@banger-io/comments-analyzer": ["libs/comments-analyzer/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
