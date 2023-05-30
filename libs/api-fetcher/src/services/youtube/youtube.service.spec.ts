@@ -1,5 +1,5 @@
 import { YoutubeService, VideoId, Comment } from './youtube.service';
-import { YoutubeApiRepository } from '../../features/http';
+import { YoutubeApiRepository } from '../../features/http/repositories/youtube-api';
 
 const mockRepository: YoutubeApiRepository = {
   async getVideosFromChannel(channelId: string, apiKey: string): Promise<unknown> {

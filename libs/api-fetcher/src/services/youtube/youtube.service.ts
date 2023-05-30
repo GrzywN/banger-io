@@ -1,5 +1,5 @@
 import { parseVideos, parseCommentThreads } from '../../schemas/youtube-v3';
-import type { YoutubeApiRepository } from '../../features/http';
+import type { YoutubeApiRepository } from '../../features/http/repositories/youtube-api';
 
 export type VideoId = string;
 

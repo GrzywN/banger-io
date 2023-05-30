@@ -1,4 +1,5 @@
-import { AxiosHttpClient, YoutubeApiHttpRepository } from '../../features/http';
+import { AxiosHttpClient } from '../../features/http';
+import { YoutubeApiHttpRepository } from '../../features/http/repositories/youtube-api';
 import { YoutubeService } from '../youtube';
 
 export type ErrorCallback = (error: Error) => void;
