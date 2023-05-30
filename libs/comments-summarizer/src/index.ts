@@ -1,1 +1,1 @@
-export * from './lib/comments-summarizer';
+export * from './services/comments-summarizer';
