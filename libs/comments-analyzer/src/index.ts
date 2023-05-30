@@ -1,1 +1,1 @@
-export * from './lib/comments-analyzer';
+export * from './services/comments-analyzer';
